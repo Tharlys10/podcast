@@ -1,0 +1,25 @@
+version: "3.7"
+
+services: 
+  web:
+    build: .
+    image: podcast/web
+    container_name: podcastweb
+    restart: always
+    expose: 
+      - '3000'
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.rentxserver.rule=Host(`app.tharlysalves.online`) && PathPrefix(`/podcast`)"
+      - "traefik.http.routers.rentxserver.entrypoints=websecure"
+      - "traefik.http.routers.rentxserver.tls.certresolver=tharlys-ssl-resolver"
+      - "traefik.http.routers.rentxserver.service=rentxserver"
+      - "traefik.http.services.rentxserver.loadbalancer.server.port=3000"
+
+networks:
+  proxy:
+    external:
+      name: proxy
