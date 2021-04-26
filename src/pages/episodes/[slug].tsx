@@ -88,7 +88,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params
   });
 
-  const paths = data.map(episode => {
+  const episodes = data.splice(0, 2)
+
+  const paths = episodes.map(episode => {
     return {
       params: {
         slug: episode.id

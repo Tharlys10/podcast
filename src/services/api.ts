@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:9876'
+  baseURL: 'https://app.tharlysalves.online/podcastserver'
 });
