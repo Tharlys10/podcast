@@ -10,7 +10,6 @@ services:
       - '3000'
     networks:
       - proxy
-    network_mode: host
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
