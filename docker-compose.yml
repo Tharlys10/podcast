@@ -13,11 +13,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
-      - "traefik.http.routers.rentxserver.rule=Host(`app.tharlysalves.online`) && PathPrefix(`/podcast`)"
-      - "traefik.http.routers.rentxserver.entrypoints=websecure"
-      - "traefik.http.routers.rentxserver.tls.certresolver=tharlys-ssl-resolver"
-      - "traefik.http.routers.rentxserver.service=rentxserver"
-      - "traefik.http.services.rentxserver.loadbalancer.server.port=3000"
+      - "traefik.http.routers.podcastweb.rule=Host(`app.tharlysalves.online`) && PathPrefix(`/podcast`)"
+      - "traefik.http.routers.podcastweb.entrypoints=websecure"
+      - "traefik.http.routers.podcastweb.tls.certresolver=tharlys-ssl-resolver"
+      - "traefik.http.routers.podcastweb.service=podcastweb"
+      - "traefik.http.services.podcastweb.loadbalancer.server.port=3000"
 
 networks:
   proxy:
