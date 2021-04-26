@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className={styles.headerContainer}>
       <Link href="/">
-        <img style={{ cursor: 'pointer' }} src="/logo.svg" alt="Podcast" />
+        <img style={{ cursor: 'pointer' }} src="/podcast/logo.svg" alt="Podcast" />
       </Link>
 
       <p>O melhor para você ouvir, sempre</p>
