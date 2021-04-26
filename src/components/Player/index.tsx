@@ -66,7 +66,7 @@ export function Player() {
   return (
     <div className={styles.playerContainer}>
       <header>
-        <img src="/playing.svg" alt="Tocando agora" />
+        <img src="/podcast/playing.svg" alt="Tocando agora" />
         <strong>Tocando agora</strong>
       </header>
 
@@ -131,27 +131,27 @@ export function Player() {
 
         <div className={styles.buttons}>
           <button className={isShuffling ? styles.isActive : ''} type="button" disabled={!episode || episodeList.length === 1} onClick={() => toggleShuffling()}>
-            <img src="/shuffle.svg" alt="Embaralhar" />
+            <img src="/podcast/shuffle.svg" alt="Embaralhar" />
           </button>
           <button type="button" disabled={!episode || !hasPrevious} onClick={() => playPrevious()}>
-            <img src="/play-previous.svg" alt="Tocar anterior" />
+            <img src="/podcast/play-previous.svg" alt="Tocar anterior" />
           </button>
           <button type="button" className={styles.playButton} disabled={!episode} onClick={() => togglePlay()} >
             {
               isPlaying
                 ? (
-                  <img src="/pause.svg" alt="Tocar" />
+                  <img src="/podcast/pause.svg" alt="Tocar" />
                 )
                 : (
-                  <img src="/play.svg" alt="Tocar" />
+                  <img src="/podcast/play.svg" alt="Tocar" />
                 )
             }
           </button>
           <button type="button" disabled={!episode || !hasNext} onClick={() => playNext()}>
-            <img src="/play-next.svg" alt="Tocar proxima" />
+            <img src="/podcast/play-next.svg" alt="Tocar proxima" />
           </button>
           <button className={isLooping ? styles.isActive : ''} type="button" disabled={!episode} onClick={() => toggleLoop()} >
-            <img src="/repeat.svg" alt="Repetir" />
+            <img src="/podcast/repeat.svg" alt="Repetir" />
           </button>
         </div>
       </footer>
