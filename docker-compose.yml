@@ -8,9 +8,8 @@ services:
     restart: always
     expose: 
       - '3000'
-    # networks:
-      # - proxy
-      # - podcast
+    networks:
+      - proxy
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
@@ -24,5 +23,3 @@ networks:
   proxy:
     external:
       name: proxy
-  podcast:
-    name: podcast-network
